@@ -122,10 +122,10 @@ public class RentBnbDemo {
 
 	private static void startH2Server() {
 		try {
-			tcpServer = Server.createTcpServer( "-tcpAllowOthers", "-tcpDaemon");
+			tcpServer = Server.createTcpServer( "-tcpAllowOthers", "-tcpDaemon","-tcpPort", "9092");
 			tcpServer.start();
 
-			webServer = Server.createWebServer( "-webAllowOthers", "-webDaemon");
+			webServer = Server.createWebServer( "-webPort", "9093","-webAllowOthers", "-webDaemon");
 			webServer.start();
 		} catch (SQLException e) {
 			//
